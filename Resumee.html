@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    .header {
+        background-color: powderblue;
+        color: black;
+        padding: 15px;
+        }
+    ul{
+        list-style: none;
+    }
+    .l li{
+        width: 100%;
+        background-color: rgb(0, 195, 255);
+        color: black;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .l1 li{
+        width: 100%;
+        color: black;
+        border-radius: 4px;
+        padding: 5px;
+        margin: 5px;
+    }
+    .l h3{
+        width: 100%;
+        color: black;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .sel{
+        color: black;
+        background-color: rgb(0, 195, 255);
+        border-radius: 4px;
+        padding: 10px;
+        margin: 15px;
+    }
+    .l li:hover,.sel:hover{
+        background-color: rgb(247, 139, 127);
+        color: white;
+    }
+    table{
+        table-layout: auto;
+        width: 70%;     
+    }
+    th,td{
+    text-align: right;
+    border: 1px solid darkblue;
+    padding: 10px;
+    width: 20px;
+    overflow: hidden;
+    }
+    tr{
+        padding: 5px;
+        margin: 5px;
+    }
+    tr:nth-child(odd){
+        background-color:rgba(170, 170, 170, 0.801); 
+    }
+    .r li{
+        width: 100%;
+        background-color: rgb(0, 200, 255);
+        color: black;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .r1 li{
+        width: 100%;
+        color: black;
+        border-radius: 4px;
+        padding: 5px;
+        margin: 5px;
+    }
+    .r h3{
+        width: 100%;
+        color: black;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .r li:hover{
+        background-color: rgb(247, 139, 127);
+        color: white;
+    }
+    
+</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="res.js"></script>
+    <title>Resume</title>
+</head>
+<body ng-app="myApp" style="font-family: Georgia, 'Times New Roman', Times, serif">
+
+    <div class="header">
+    <h1 style="text-align: center;color: black;">RESUME</h1>
+    </div>
+
+    <div class="row">
+
+          <div class="col-sm-3 mt-5" data-wow-offset="0" data-wow-delay="0.6s" style="visibility: visible;-webkit-animation-delay: 0.6s; -moz-animation-delay: 0.6s; animation-delay: 0.6s;">
+            <ul class="l1">
+              <li ng-controller="myCtrl" ng-mouseover="change()"><img src="Greeva/{{x}}.JPG" alt="{{x}}" style="border-radius: 40px;width: 75px; height: 75px;"></li>
+              <li><img src="mail.png " style=" width: 15px; height: 15px ">&nbsp;&nbsp;<a href="mailto: greeva17@gmail.com">greeva17@gmail.com </a></li>
+              <li><img src="contact.jpg " style=" width: 15px; height: 15px ">&nbsp;&nbsp;7043347570</li>
+              <li><img src="add.png " style=" width: 15px; height: 15px ">&nbsp;&nbsp;Bharuch,Gujarat</li>
+            </ul>
+            <ul class="mt-6 l">
+                <h3>Languages Known</h3>
+                <li>English</li>
+                <li>Hindi</li>
+                <li>Gujarati</li>
+            </ul>
+          </div>
+          
+          <div class="col-sm-5" style="overflow: auto">
+            <div style="margin: 30PX">     
+                <div><h3 style="margin-top: 50px;">Objective:</h3></div>
+                <div>To give my best performance allowing me utilize my knowledge while gaining valuable work experience in a team and goal oriented environment.</div>
+            </div> 
+            <div style="margin: 30px" ng-controller="myCtrl">     
+                <div><h3 style="margin-top: 50px;">Qualification:</h3></div>
+                <ul style="display: inline; margin:10px">
+                    <li class="sel" style="display: inline-flex" ng-click="changeq(1)">H.S.C</li>
+                    <li class="sel"style="display: inline-flex" ng-click="changeq(2)">S.S.C</li>
+                </ul>    
+                <table style="overflow: scroll;width: 100%; margin: 10px ">
+                        <tr>
+                            <th style="width: 20%">Qualification</th>
+                            <th>Board</th> 
+                            <th>School</th>
+                            <th>Year</th> 
+                            <th>Percentage/CGPA</th>
+                          </tr>
+                          <tr ng-model="y">
+                            <td>{{y.qual}}</td>
+                            <td>{{y.board}}</td> 
+                            <td>{{y.school}}</td>
+                            <td>{{y.year}}</td>
+                            <td>{{y.perc}}</td> 
+                          </tr>
+                    </table>   
+            </div>     
+            <div style="margin: 30px" ng-controller="myCtrl">     
+                    <div><h3 style="margin-top: 50px;">Under Graduation:</h3></div>
+                    <div>Pursuing from Birla Vishwkarma Mahavidyalaya.</div>
+                    <ul style="display: inline; margin:10px">
+                        <li class="sel" style="display: inline-flex" ng-click="changes(1)">SEM-1</li>
+                        <li class="sel"style="display: inline-flex" ng-click="changes(2)">SEM-2</li>
+                        <li class="sel" style="display: inline-flex" ng-click="changes(3)">SEM-3</li>
+                        <li class="sel"style="display: inline-flex" ng-click="changes(4)">SEM-4</li>
+                    </ul>    
+                    <table style="overflow: scroll;width: 100%; margin: 10px ">
+                            <tr>
+                                <th style="width: 20%">Semester</th>
+                                <th>SPI</th> 
+                                <th>CPI</th>
+                              </tr>
+                              <tr ng-model="z">
+                                <td>{{z.sem}}</td>
+                                <td>{{z.spi}}</td> 
+                                <td>{{z.cpi}}</td>
+                              </tr>
+                        </table>   
+            </div>
+            
+                
+            </div>
+            <div class="col-sm-3 mt-5" data-wow-offset="0" data-wow-delay="0.6s" style="visibility: visible;-webkit-animation-delay: 0.6s; -moz-animation-delay: 0.6s; animation-delay: 0.6s;">
+          	 <ul class="mt-6 r">
+                <h3>Technical Skills</h3>
+                <li>C/C++</li>
+                <li>Java</li>
+                <li>HTML/CSS</li>
+                <li>PLSQL</li>
+                <li>Assembly Language</li>
+                <li>Javascript</li>
+            </ul>
+        </div>
+
+    </div>
+
+          
+
+	
+</body>
+</html>
